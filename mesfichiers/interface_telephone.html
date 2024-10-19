@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Téléphone</title>
+    <!-- Lien vers le fichier CSS Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lien vers le fichier CSS Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .phone-frame {
+            width: 360px;
+            height: 640px;
+            border: 16px black solid;
+            border-top: 60px black solid;
+            border-bottom: 60px black solid;
+            border-radius: 36px;
+            position: relative;
+            background-color: #fff;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: url('pk.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .top-bar {
+            width: 60px;
+            height: 5px;
+            background: black;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .search-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            position: absolute;
+            top: 100px; /* Adjust position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 10px 10px 40px; /* Space for the icon */
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 15px; /* Position the icon inside the input */
+            font-size: 24px;
+            color: gray;
+        }
+
+        .date-time {
+            font-size: 18px; /* Adjust to a medium size */
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+            position: absolute;
+            top: 180px; /* Adjust position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .time {
+            font-size: 14px; /* Adjust font size for time */
+            color: white;
+            text-align: center;
+            margin-top: 10px; /* Space between date and time */
+            position: absolute;
+            top: 210px; /* Adjust position below date */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .whatsapp-icon,
+        .telegram-icon,
+        .phone-icon,
+        .photo-icon,
+        .calendar-icon,
+        .contacts-icon {
+            position: absolute;
+            bottom: 200px; /* Adjust position from bottom */
+            font-size: 40px; /* Increase icon size */
+        }
+
+        .whatsapp-icon {
+            left: 20px; /* Adjust position from left */
+            color: #25D366; /* Couleur de WhatsApp */
+        }
+
+        .telegram-icon {
+            left: 80px; /* Adjust position from left */
+            color: #0088cc; /* Couleur de Telegram */
+        }
+
+        .phone-icon {
+            left: 140px; /* Adjust position from left */
+            color: #333; /* Couleur du téléphone */
+        }
+
+        .photo-icon {
+            left: 200px; /* Adjust position from left */
+            color: #3b5998; /* Couleur de l'icône photo */
+        }
+
+        .calendar-icon {
+            left: 260px; /* Adjust position from left */
+            color: #f0ad4e; /* Couleur de l'icône agenda */
+        }
+
+        .contacts-icon {
+            left: 20px; /* Adjust position from left */
+            bottom: 140px; /* Adjust position from bottom */
+            color: #007bff; /* Couleur de l'icône contacts */
+        }
+
+        .whatsapp-icon:hover,
+        .telegram-icon:hover,
+        .phone-icon:hover,
+        .photo-icon:hover,
+        .calendar-icon:hover,
+        .contacts-icon:hover {
+            color: #128C7E; /* Couleur au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="phone-frame">
+            <div class="top-bar"></div>
+            <div class="phone-screen">
+                <!-- Barre de recherche Google -->
+                <div class="search-bar">
+                    <i class="fab fa-google"></i>
+                    <input type="text" placeholder="Recherche Google...">
+                </div>
+                <!-- Date -->
+                <div class="date-time" id="date-time">
+                    <!-- Date sera insérée ici -->
+                </div>
+                <!-- Heure -->
+                <div class="time" id="time">
+                    <!-- Heure sera insérée ici -->
+                </div>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/votre_numero_de_telephone" class="whatsapp-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- Contacts -->
+                <a href="#" class="contacts-icon" target="_blank">
+                    <i class="fas fa-address-book"></i>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/votre_telegram" class="telegram-icon" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <!-- Téléphone -->
+                <a href="#" class="phone-icon" target="_blank">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <!-- Photo -->
+                <a href="#" class="photo-icon" target="_blank">
+                    <i class="fas fa-camera"></i>
+                </a>
+                <!-- Agenda -->
+                <a href="#" class="calendar-icon" target="_blank">
+                    <i class="far fa-calendar-alt"></i>
+                </a>
+            </div>
+            <div class="button"></div>
+        </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript Bootstrap et dépendances -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Lien vers le fichier JavaScript Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const dateStr = `${day}/${month}/${year}`;
+            document.getElementById('date-time').textContent = dateStr;
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const timeStr = `${hours}:${minutes}`;
+            document.getElementById('time').textContent = timeStr;
+        }
+
+        // Mettre à jour la date et l'heure chaque seconde
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Appel initial pour afficher la date et l'heure immédiatement
+    </script>
+</body>
+
+</html>

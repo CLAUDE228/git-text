@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+        
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input, select, button {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+        
+        #chat-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Discussion en cours</h1>
+    </header>
+
+    <section>
+        <div id="chat-box">
+            <!-- Les messages apparaissent ici -->
+            <p id="greeting"></p>
+        </div>
+
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Écrivez votre message...">
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const gender = urlParams.get('gender');
+
+        const greeting = document.getElementById('greeting');
+        const chatBox = document.getElementById('chat-box');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+
+        // Message de bienvenue personnalisé
+        let dialogue = `Bonjour ${username}, comment puis-je vous aider aujourd'hui ?`;
+        greeting.textContent = dialogue;
+
+        // Gérer la soumission du formulaire de chat
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userMessage = userInput.value;
+            const userMessageElement = document.createElement('p');
+            userMessageElement.textContent = `Vous: ${userMessage}`;
+            chatBox.appendChild(userMessageElement);
+
+            // Réponse automatisée de la machine
+            const botResponseElement = document.createElement('p');
+            botResponseElement.textContent = gender === 'male' ? `Homme: D'accord, parlons-en.` : `Femme: Très bien, continuons.`;
+            chatBox.appendChild(botResponseElement);
+
+            // Réinitialiser l'entrée utilisateur
+            userInput.value = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Discussion</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* Styles personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('https://source.unsplash.com/1600x900/?chat,technology');
+            background-size: cover;
+            background-attachment: fixed;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                filter: brightness(1);
+            }
+            100% {
+                filter: brightness(0.7);
+            }
+        }
+
+        .form-section {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* Animation for labels */
+        .animate-label {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        input:focus + .animate-label,
+        select:focus + .animate-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center py-5">
+        <h1 class="text-white animate__animated animate__fadeInDown">Bienvenue sur le site de discussion</h1>
+    </header>
+
+    <section class="d-flex justify-content-center align-items-center">
+        <div class="form-section col-md-6">
+            <h2 class="text-center animate__animated animate__fadeInDown">Entrez vos informations</h2>
+            <form action="/chat" method="POST">
+                <div class="mb-3">
+                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Entrez votre prénom" required>
+                    <label for="firstname" class="form-label animate-label">Prénom :</label>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Entrez votre nom" required>
+                    <label for="lastname" class="form-label animate-label">Nom :</label>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="country" name="country" class="form-control" placeholder="Entrez votre pays" required>
+                    <label for="country" class="form-label animate-label">Pays :</label>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="neighborhood" name="neighborhood" class="form-control" placeholder="Entrez votre quartier" required>
+                    <label for="neighborhood" class="form-label animate-label">Quartier :</label>
+                </div>
+
+                <div class="mb-3">
+                    <select id="maritalStatus" name="maritalStatus" class="form-select" required>
+                        <option value="single">Célibataire</option>
+                        <option value="married">Marié(e)</option>
+                        <option value="divorced">Divorcé(e)</option>
+                        <option value="widowed">Veuf(ve)</option>
+                    </select>
+                    <label for="maritalStatus" class="form-label animate-label">Statut matrimonial :</label>
+                </div>
+
+                <div class="mb-3">
+                    <select id="educationLevel" name="educationLevel" class="form-select" required>
+                        <option value="highSchool">Lycée</option>
+                        <option value="bachelor">Licence</option>
+                        <option value="master">Master</option>
+                        <option value="phd">Doctorat</option>
+                    </select>
+                    <label for="educationLevel" class="form-label animate-label">Niveau scolaire :</label>
+                </div>
+
+                <div class="mb-3">
+                    <select id="languageProficiency" name="languageProficiency" class="form-select" required>
+                        <option value="beginner">Débutant</option>
+                        <option value="intermediate">Intermédiaire</option>
+                        <option value="advanced">Avancé</option>
+                        <option value="native">Langue maternelle</option>
+                    </select>
+                    <label for="languageProficiency" class="form-label animate-label">Niveau de langue :</label>
+                </div>
+
+                <div class="mb-3">
+                    <select id="gender" name="gender" class="form-select">
+                        <option value="male">Homme</option>
+                        <option value="female">Femme</option>
+                    </select>
+                    <label for="gender" class="form-label animate-label">Choisissez avec qui discuter :</label>
+                </div>
+
+                <div class="text-center">
+                    <a href="chat.html">
+         
+                    <a href="chat.html">
+                        <button type="button" class="btn btn-custom w-100">Commencez la discussion.</button>
+                      </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

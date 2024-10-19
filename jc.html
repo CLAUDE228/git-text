@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur texto.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('over.jpg'); /* Remplacez 'votre_image_de_fond.jpg' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .welcome-message h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        .submit-button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.1);}
+            100% {transform: scale(1);}
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-message">
+        <h1>Bienvenue sur 🎉command a volonté😁😁😁🎉</h1>
+    </div>
+    <button class="submit-button" onclick="window.location.href='galerie.html'">voire les articles</button>
+</body>
+</html>
